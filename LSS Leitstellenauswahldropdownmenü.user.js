@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS Leitstellenauswahldropdownmenü
 // @namespace    www.leitstellenspiel.de
-// @version      1.1
+// @version      1.2
 // @description  Fügt ein Dropdown-Menü für die direktauswahl einer Leitstelle hinzu
 // @author       MissSobol
 // @match        https://www.leitstellenspiel.de/
@@ -41,8 +41,10 @@
                 var selectedBuildingId = dropdown.value;
                 var buildingUrl = 'https://www.leitstellenspiel.de/buildings/' + selectedBuildingId;
 
-                // Gebäude öffnen
-                window.open(buildingUrl, '_blank').focus();
+                // Gebäude öffnen (mit den folgenden 3 Zeilen festlegen, wie die Leitstelle geöffnet werden soll.)
+                window.open(buildingUrl, '_blank').focus(); //neuer Tab
+                //window.location.href = buildingUrl; //selber Tab
+                //window.lightboxOpen(buildingUrl); //neue Lightbox
             }
         });
 
